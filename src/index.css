@@ -17,12 +17,15 @@ html, body{
   padding: 0;
   box-sizing: border-box;
 }
+
 .pane{
   display: flex;
+  height: 50%;
 }
 
 .pane-container{
   height: 100vh;
+  overflow: hidden;
   /* width: 100vw; */
 }
 
@@ -42,6 +45,19 @@ html, body{
   padding: .5rem;
   background-color: hsl(225, 6%, 25%);
 }
+
+.top-pane  .editor-container.collapsed{
+  flex-grow: 0;
+}
+
+.editor-container.collapsed .CodeMirror-scroll{
+  position: absolute;
+  overflow: hidden !important;
+}
+
+/* .editor-container.collapsed .CodeMirror-scroll::-webkit-scrollbar{
+  display:none;
+} */
 
 .top-pane .editor-container .editor-title{
   display: flex;
