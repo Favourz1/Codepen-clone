@@ -11,3 +11,56 @@
   /* color: rgba(255, 255, 255, 0.87); */
   /* background-color: #242424; */
 }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.pane{
+  display: flex;
+}
+
+.pane-container{
+  height: 100vh;
+  /* width: 100vw; */
+}
+
+.pane-container .pane.top-pane{
+  display: flex;
+  flex-direction: row;
+  background-color: hsl(225, 6%, 25%);
+  color: white;
+}
+
+.top-pane  .editor-container{
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: .5rem;
+  background-color: hsl(225, 6%, 25%);
+}
+
+.top-pane .editor-container .editor-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: hsl(225, 6%, 13%);
+  padding: .5rem .5rem .5rem 1rem;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
+}
+
+/* .CodeMirror{
+  height: 100% !important;
+} */
+
+.top-pane .editor-container .code-mirror-wrapper{
+  flex-grow: 1;
+  overflow: hidden;
+  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}
