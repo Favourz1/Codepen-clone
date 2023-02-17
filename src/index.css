@@ -18,21 +18,25 @@ html, body{
   box-sizing: border-box;
 }
 
+.app{
+  height: 100vh;
+}
+
+.pane-container{
+  overflow: hidden;
+  height: calc(100% - 60px);
+  width: 100%;
+}
+
 .pane{
   display: flex;
   height: 50%;
 }
 
-.pane-container{
-  height: 100vh;
-  overflow: hidden;
-  /* width: 100vw; */
-}
-
 .pane-container .pane.top-pane{
   display: flex;
   flex-direction: row;
-  background-color: hsl(225, 6%, 25%);
+  /* background-color: hsl(225, 6%, 25%); */
   color: white;
 }
 
@@ -79,4 +83,5 @@ html, body{
   overflow: hidden;
   border-bottom-right-radius: .5rem;
   border-bottom-left-radius: .5rem;
+  transition: all .518s cubic-bezier(0.4,0,0.2,1);
 }

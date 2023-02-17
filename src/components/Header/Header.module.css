@@ -1,0 +1,45 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: hsl(225, 6%, 25%);
+    height: 60px;
+    border-bottom: 1px solid hsla(227, 6%, 30%, 0.562);
+    box-sizing: border-box;
+    padding: 10px;
+    transition: all .518s cubic-bezier(0.4,0,0.2,1);
+    -webkit-transition: all .518s cubic-bezier(0.4,0,0.2,1);
+    -moz-transition: all .518s cubic-bezier(0.4,0,0.2,1);
+    -ms-transition: all .518s cubic-bezier(0.4,0,0.2,1);
+    -o-transition: all .518s cubic-bezier(0.4,0,0.2,1);
+}
+
+header .logo-wrapper{
+    overflow: hidden;
+}
+
+.logo-wrapper img{
+    width: 100px;
+    height: 40px;
+    transition: all .5s ease-out;
+}
+
+.header-action-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-action-wrapper .header-action-btn{
+
+}
+
+.header-action-wrapper .header-action-btn:not(:last-child){
+    margin-right: 8px;
+}
+
+.theme-btn{
+
+}
