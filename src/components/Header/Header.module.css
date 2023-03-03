@@ -33,7 +33,12 @@ header .logo-wrapper{
 }
 
 .header-action-wrapper .header-action-btn{
-
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    /* background: hsl(227deg 12% 30%); */
 }
 
 .header-action-wrapper .header-action-btn:not(:last-child){
