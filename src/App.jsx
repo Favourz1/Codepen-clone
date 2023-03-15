@@ -10,6 +10,7 @@ export default function App() {
   const [javascript, setJavascript] = useLocalStorage("javscript", " ");
   const [srcDoc, setSrcDoc] = useState(" ");
   const [isWelcomeTextActive, setIsWelcomeTextActive] = useState(true);
+  const [editorPosition, setEditorPosition] = useState('top');
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -43,7 +44,7 @@ export default function App() {
   return (
     <ThemeContext>
       <div className="app">
-        <Header />
+        <Header editorPosition={editorPosition} changeEditorPosition={setEditorPosition} />
         <div className="pane-container">
           <div className="pane top-pane">
             <Editor

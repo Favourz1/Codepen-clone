@@ -11,7 +11,7 @@ const EditorModal = ({ onblur }) => {
             className='editor-position__modal-container'
             // onBlur={onblur}
             // onMouseOut={onblur}
-            onClick={(el) => { el.target !== el ? onblur : undefined }}
+            // onClick={(el) => { el.target !== el ? onblur : undefined }}
             //useRef here 👆
             style={{
                 backgroundColor: darkThemeContext ? 'hsl(225, 6%, 25%)' : 'white',

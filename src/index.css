@@ -24,6 +24,8 @@ html, body{
 }
 
 .pane-container{
+  display:flex;
+  flex-direction: column;
   overflow: hidden;
   height: calc(100% - 60px);
   width: 100%;
@@ -133,7 +135,7 @@ html, body{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  border: 1px solid hsl(225, 6%, 45%);
+  border: 2px solid hsl(225, 6%, 45%);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -149,5 +151,5 @@ html, body{
 }
 
 .editor-position__action-wrapper li:not(:last-child){
-  border-right: 1px solid hsl(225, 6%, 45%);
+  border-right: 2px solid hsl(225, 6%, 45%);
 }
