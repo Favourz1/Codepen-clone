@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Editor from "./components/Editor/Editor";
 import useLocalStorage from "./hooks/useLocalStorage";
 import Header from "./components/Header/Header";
@@ -11,7 +11,7 @@ export default function App() {
   const [srcDoc, setSrcDoc] = useState(" ");
   const [isWelcomeTextActive, setIsWelcomeTextActive] = useState(true);
   const [editorPosition, setEditorPosition] = useState('top');
-
+  const [abstractDarkTheme, setAbstractDarkTheme] = useState()
   useEffect(() => {
     const timeout = setTimeout(() => {
       isWelcomeTextActive
@@ -41,18 +41,36 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, [html, css, javascript]);
 
+  const appConditionalStyles = {
+    "top": {
+      paneContainer: { flexDirection: "column" },
+      topPane: { flexDirection: "row" }
+    },
+    "left": {
+      paneContainer: { flexDirection: "row" },
+      topPane: { flexDirection: "column" }
+    },
+    "right": {
+      paneContainer: { flexDirection: "row-reverse" },
+      topPane: { flexDirection: "column" }
+    }
+  }
+
+
   return (
     <ThemeContext>
+      {console.log(abstractDarkTheme)}
       <div className="app">
-        <Header editorPosition={editorPosition} changeEditorPosition={setEditorPosition} />
-        <div className="pane-container">
-          <div className="pane top-pane">
+        <Header editorPosition={editorPosition} changeEditorPosition={setEditorPosition} changeAbstractDarkTheme={setAbstractDarkTheme} />
+        <div className="pane-container" style={appConditionalStyles[editorPosition].paneContainer}>
+          <div className="pane top-pane" style={{ width: editorPosition === "top" ? "100%" : "50%", height: editorPosition === "top" ? "50%" : "100%", backgroundColor: abstractDarkTheme ? 'hsl(225, 6%, 25%)' : 'hsl(0deg 3% 73%)', ...appConditionalStyles[editorPosition].topPane }}>
             <Editor
               displayName="HTML"
               language="xml"
               value={html}
               onChange={setHtml}
               setWelcomeText={setIsWelcomeTextActive}
+              editorPosition={editorPosition}
             />
             <Editor
               displayName="CSS"
@@ -60,6 +78,7 @@ export default function App() {
               value={css}
               onChange={setCss}
               setWelcomeText={setIsWelcomeTextActive}
+              editorPosition={editorPosition}
             />
             <Editor
               displayName="Javascript"
@@ -67,9 +86,10 @@ export default function App() {
               value={javascript}
               onChange={setJavascript}
               setWelcomeText={setIsWelcomeTextActive}
+              editorPosition={editorPosition}
             />
           </div>
-          <div className="pane bottom-pane">
+          <div className="pane bottom-pane" style={{ width: editorPosition === "top" ? "100%" : "50%", height: editorPosition === "top" ? "50%" : "100%" }}>
             <iframe
               srcDoc={srcDoc}
               title="output"

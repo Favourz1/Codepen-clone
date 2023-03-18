@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons'
 import { themeContext } from "../../contexts/ThemeContext"
 
-export default function Editor({ displayName, language, value, onChange, setWelcomeText }) {
+export default function Editor({ displayName, language, value, onChange, setWelcomeText, editorPosition }) {
 
   const [open, setOpen] = useState(true)
 
@@ -22,11 +22,28 @@ export default function Editor({ displayName, language, value, onChange, setWelc
     onChange(value)
   }
 
+  const editorConditionalStyles = {
+    "top": {
+      editorContainer: { width: "calc(100% / 3)", height: "" }
+    },
+    "left": {
+      editorContainer: { width: "100%", height: "calc(90% / 3)" }
+    },
+    "right": {
+      editorContainer: { width: "100%", height: "calc(90% / 3)" }
+    }
+  }
+
   return (
-    <div className={`editor-container ${open ? '' : 'collapsed'}`} style={{
+    <div className={`editor-container ${open ? '' : 'collapsed'} ${editorPosition !== "top" && !open ? editorStyles['collapse'] : ''}`} style={{
       backgroundColor: darkTheme ? 'hsl(225, 6%, 25%)' : 'hsl(0deg 3% 73%)',
-      color: darkTheme ? 'white' : 'hsl(225, 6%, 25%)'
+      color: darkTheme ? 'white' : 'hsl(225, 6%, 25%)', ...editorConditionalStyles[editorPosition].editorContainer
     }}>
+      {/* Change 👆    width:auto; height: calc(90% / 3);*/}
+      {/* Change 👆     .top-pane .editor-container.collapsed {
+    flex-grow: 0;
+    height: 20%;
+}*/}
       <div className="editor-title">
         {displayName}
         <button

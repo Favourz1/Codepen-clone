@@ -4,7 +4,7 @@ import EditorTop from '../Icons/EditorTop'
 import EditorRight from '../Icons/EditorRight'
 import { themeContext } from '../../contexts/ThemeContext'
 
-const EditorModal = ({ onblur }) => {
+const EditorModal = ({ onblur, editorPosition, changeEditorPosition }) => {
     const darkThemeContext = useContext(themeContext);
     return (
         <div
@@ -21,9 +21,9 @@ const EditorModal = ({ onblur }) => {
             <div className='editor-position__modal-wrapper'>
                 <h3 className='editor-position__title'>Change View</h3>
                 <ul className='editor-position__action-wrapper'>
-                    <li><EditorLeft dark={darkThemeContext} /></li>
-                    <li><EditorTop dark={darkThemeContext} /></li>
-                    <li><EditorRight dark={darkThemeContext} /></li>
+                    <li onClick={() => changeEditorPosition('left')}><EditorLeft dark={darkThemeContext} /></li>
+                    <li onClick={() => changeEditorPosition('top')}><EditorTop dark={darkThemeContext} /></li>
+                    <li onClick={() => changeEditorPosition('right')}><EditorRight dark={darkThemeContext} /></li>
                 </ul>
 
             </div>

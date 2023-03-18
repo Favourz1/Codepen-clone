@@ -5,3 +5,7 @@
     color: white;
     cursor: pointer;
 }
+
+.collapse{
+    height: 20% !important;
+}

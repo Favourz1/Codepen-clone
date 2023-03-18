@@ -29,11 +29,17 @@ html, body{
   overflow: hidden;
   height: calc(100% - 60px);
   width: 100%;
+  transition: all 0.35s ease;
+  -webkit-transition: all 0.35s ease;
+  -moz-transition: all 0.35s ease;
+  -ms-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
 }
 
 .pane{
   display: flex;
   height: 50%;
+  width: 100%;
 }
 
 .pane-container .pane.top-pane{
