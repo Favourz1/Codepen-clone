@@ -47,6 +47,11 @@ html, body{
   flex-direction: row;
   /* background-color: hsl(225, 6%, 25%); */
   color: white;
+  padding: 0 18px;
+}
+
+.pane-container .pane.bottom-pane{
+  padding: 0 20px;
 }
 
 .top-pane  .editor-container{
