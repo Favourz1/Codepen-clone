@@ -5,6 +5,8 @@ import 'codemirror/theme/base16-light.css'
 import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/css/css'
+import 'codemirror/addon/display/fullscreen.js'
+import 'codemirror/addon/display/fullscreen.css'
 import editorStyles from './Editor.module.css'
 import { Controlled as ControlledEditor } from 'react-codemirror2'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -64,7 +66,16 @@ export default function Editor({ displayName, language, value, onChange, setWelc
           lint: true,
           mode: language,
           lineNumbers: true,
-          theme: darkTheme ? 'material' : 'base16-light'
+          styleActiveLine: true,
+          theme: darkTheme ? 'material' : 'base16-light',
+          extraKeys: {
+            "F11": function (cm) {
+              cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+            },
+            "Esc": function (cm) {
+              if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+            }
+          }
         }}
       />
     </div>
