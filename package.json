@@ -1,10 +1,10 @@
 {
   "name": "codepen-clone",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "codepen-clone": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -13,8 +13,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "codemirror": "^5.65.11",
+    "codemirror-console": "^3.0.4",
+    "codemirror-console-ui": "^3.0.4",
     "react": "^16.14.0",
     "react-codemirror2": "^7.2.1",
+    "react-console-emulator": "^5.0.2",
     "react-dom": "^16.14.0"
   },
   "devDependencies": {

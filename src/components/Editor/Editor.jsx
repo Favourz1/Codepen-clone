@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef } from 'react'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
 import 'codemirror/theme/base16-light.css'
@@ -17,11 +17,13 @@ export default function Editor({ displayName, language, value, onChange, setWelc
 
   const [open, setOpen] = useState(true)
 
+
   const darkTheme = useContext(themeContext)
 
   function handleChange(editor, data, value) {
     setWelcomeText(false)
     onChange(value)
+    // handleConsoleChange()
   }
 
   const editorConditionalStyles = {
@@ -41,11 +43,6 @@ export default function Editor({ displayName, language, value, onChange, setWelc
       backgroundColor: darkTheme ? 'hsl(225, 6%, 25%)' : 'hsl(0deg 3% 73%)',
       color: darkTheme ? 'white' : 'hsl(225, 6%, 25%)', ...editorConditionalStyles[editorPosition].editorContainer
     }}>
-      {/* Change 👆    width:auto; height: calc(90% / 3);*/}
-      {/* Change 👆     .top-pane .editor-container.collapsed {
-    flex-grow: 0;
-    height: 20%;
-}*/}
       <div className="editor-title">
         {displayName}
         <button
@@ -59,8 +56,12 @@ export default function Editor({ displayName, language, value, onChange, setWelc
       </div>
       <ControlledEditor
         onBeforeChange={handleChange}
+        // onChange={handleConsoleChange}
         value={value}
         className="code-mirror-wrapper"
+        // ref={language === 'javascript' ? jsEditorRef : ' '}
+        // ref={language === 'javascript' && jsEditorRef}
+        // {console.log(`Editor Ref is: ${jsEditorRef}`)}
         options={{
           lineWrapping: true,
           lint: true,
