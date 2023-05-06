@@ -23,7 +23,6 @@ export default function Editor({ displayName, language, value, onChange, setWelc
   function handleChange(editor, data, value) {
     setWelcomeText(false)
     onChange(value)
-    // handleConsoleChange()
   }
 
   const editorConditionalStyles = {
@@ -56,12 +55,8 @@ export default function Editor({ displayName, language, value, onChange, setWelc
       </div>
       <ControlledEditor
         onBeforeChange={handleChange}
-        // onChange={handleConsoleChange}
         value={value}
         className="code-mirror-wrapper"
-        // ref={language === 'javascript' ? jsEditorRef : ' '}
-        // ref={language === 'javascript' && jsEditorRef}
-        // {console.log(`Editor Ref is: ${jsEditorRef}`)}
         options={{
           lineWrapping: true,
           lint: true,

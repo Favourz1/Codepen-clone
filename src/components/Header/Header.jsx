@@ -34,16 +34,6 @@ const Header = ({ editorPosition = "top", changeEditorPosition, changeAbstractDa
   useEffect(() => {
     changeAbstractDarkTheme(darkThemeContext)
   }, [darkThemeContext])
-
-  //   const handleClick = (el) => {
-  //     setIsEditorModalActive(!isEditorModalActive)
-  //     if (el.target.contains({< EditorModal />})) {
-
-  //     }
-  //       else {
-  //       setIsEditorModalActive(false)
-  // }
-  //   }
   return (
     <header className={HeaderStyles.header} style={headerConditionalStyle} >
       <div className={`${HeaderStyles["logo-wrapper"]}`}>
