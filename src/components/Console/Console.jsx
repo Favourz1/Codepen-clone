@@ -30,7 +30,7 @@ const Console = ({ javascript }) => {
             console.log("Value of console initialized after render is " + isConsoleInitialized.current)
         }
 
-        // document.querySelector('.mirror-console-button.mirror-console-run')
+        document.querySelector('.mirror-console-button.mirror-console-run').textContent = "Run Console"
 
 
         // runConsole()
