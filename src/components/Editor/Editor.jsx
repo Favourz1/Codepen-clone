@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect, lazy } from "react";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material.css";
 import "codemirror/theme/base16-light.css";
@@ -12,6 +12,11 @@ import { Controlled as ControlledEditor } from "react-codemirror2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompressAlt, faExpandAlt } from "@fortawesome/free-solid-svg-icons";
 import { themeContext } from "../../contexts/ThemeContext";
+
+// const FullscreenCss = lazy(() => {
+//   import("codemirror/addon/display/fullscreen.css");
+// });
+const FullscreenCss = import("codemirror/addon/display/fullscreen.css");
 
 export default function Editor({
   displayName,
@@ -41,6 +46,14 @@ export default function Editor({
       editorContainer: { width: "100%", height: "calc(90% / 3)" },
     },
   };
+
+  useEffect(() => {
+    async function RunFullscreenCss() {
+      await FullscreenCss;
+    }
+
+    RunFullscreenCss();
+  });
 
   return (
     <div
@@ -75,6 +88,7 @@ export default function Editor({
           theme: darkTheme ? "material" : "base16-light",
           extraKeys: {
             F11: function (cm) {
+              // FullscreenCss();
               cm.setOption("fullScreen", !cm.getOption("fullScreen"));
             },
             Esc: function (cm) {
