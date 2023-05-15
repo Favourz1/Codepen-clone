@@ -77,6 +77,15 @@ header .logo-wrapper {
   clip-path: circle(100%);
 }
 
+.info-container:hover  .info-content-wrapper{
+  clip-path: circle(100%);
+}
+
+.info-container:has(.info-icon:focus)  .info-content-wrapper{
+  clip-path: circle(100%);
+}
+
+
 .info-container .info-content-wrapper {
    position: absolute;
    right: 0;
