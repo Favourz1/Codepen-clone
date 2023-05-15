@@ -1,58 +1,150 @@
-header{
-    position:relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    background-color: hsl(225, 6%, 25%);
-    height: 60px;
-    border-bottom: 1px solid hsla(227, 6%, 30%, 0.562);
-    box-sizing: border-box;
-    padding: 10px;
-    transition: all .518s cubic-bezier(0.4,0,0.2,1);
-    -webkit-transition: all .518s cubic-bezier(0.4,0,0.2,1);
-    -moz-transition: all .518s cubic-bezier(0.4,0,0.2,1);
-    -ms-transition: all .518s cubic-bezier(0.4,0,0.2,1);
-    -o-transition: all .518s cubic-bezier(0.4,0,0.2,1);
+header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: hsl(225, 6%, 25%);
+  height: 60px;
+  border-bottom: 1px solid hsla(227, 6%, 30%, 0.562);
+  box-sizing: border-box;
+  padding: 10px;
+  transition: all 0.518s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.518s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.518s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: all 0.518s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 0.518s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-header .logo-wrapper{
-    overflow: hidden;
+header .logo-wrapper {
+  overflow: hidden;
 }
 
-.logo-wrapper img{
-    width: 100px;
-    height: 40px;
-    transition: all .5s ease-out;
+.logo-wrapper img {
+  width: 100px;
+  height: 40px;
+  transition: all 0.5s ease-out;
 }
 
-.header-action-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.header-action-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header-action-wrapper .header-action-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    width: 30px;
-    padding: 4px;
-    vertical-align: middle;
-    overflow:hidden;
+.header-action-wrapper .header-action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  padding: 4px;
+  vertical-align: middle;
+  overflow: hidden;
 }
 
-.header-action-wrapper .header-action-btn svg{
-    height: 20px;
-    width: 20px;
+.header-action-wrapper .header-action-btn svg {
+  height: 20px;
+  width: 20px;
 }
 
-.header-action-wrapper .header-action-btn:not(:last-child){
-    margin-right: 8px;
+.header-action-wrapper .header-action-btn:not(:last-child) {
+  margin-right: 8px;
 }
 
-.theme-btn{
-
+.header-action-wrapper .info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items     : center; */
+  position: relative;
+  width: max-content;
+  width: auto;
+  height: 200px;
+  padding: 10px;
+  /* background-color: white;
+  color              : black; */
+  z-index: 2;
+  overflow: visible;
 }
+
+.info-container .info-icon {
+  z-index: 2;
+}
+
+.info-container:has(.info-icon:hover)  .info-content-wrapper{
+  clip-path: circle(100%);
+}
+
+.info-container .info-content-wrapper {
+   position: absolute;
+   right: 0;
+   bottom: -10%;
+   box-sizing: border-box;
+   padding: 20px;
+   padding-left: 35px;
+   width: max-content;
+   background-color: red;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   /*align-items: center;
+   */font-size: 14px;
+   clip-path: circle(20px at 93% 14%);
+   border: 1px solid hsl(225, 6%, 35%);
+   border-radius:10px ;
+   -webkit-border-radius:10px ;
+   -moz-border-radius:10px ;
+   -ms-border-radius:10px ;
+   -o-border-radius:10px ;
+   transition: clip-path 500ms ease-in-out;
+   -webkit-transition: clip-path 500ms ease-in-out;
+   -moz-transition: clip-path 500ms ease-in-out;
+   -ms-transition: clip-path 500ms ease-in-out;
+   -o-transition: clip-path 500ms ease-in-out;
+   transition-delay: 20ms;
+}
+
+.info-container .info-content-header{
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.info-container .info-content-list-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.info-container .info-content-list-wrapper .info-content-list-item::marker{
+  font-size: 12px;
+}
+
+.info-container .info-content-list-wrapper .info-content-list-item:nth-of-type(1)::marker {
+  content: "F11: ";
+}
+
+.info-container .info-content-list-wrapper .info-content-list-item:nth-of-type(2)::marker {
+  content: "Esc: ";
+}
+
+.info-container .info-content-list-wrapper .info-content-list-item:nth-of-type(3)::marker {
+  content: "Run: ";
+}
+
+.info-container .info-content-list-wrapper .info-content-list-item:nth-of-type(4)::marker {
+  content: "";
+}
+
+.info-container .info-content-list-wrapper .info-content-list-item a{
+  color:mediumslateblue;
+  text-decoration: none;
+}
+
+.info-container .info-content-list-wrapper .info-content-list-item a:hover{
+  text-decoration: underline;
+}
+
+
+
