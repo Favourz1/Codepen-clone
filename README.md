@@ -65,10 +65,12 @@ npm run codepen-clone
 The devlopment files are stored in the ```./src/``` folder.
 ## 🖥 Sceenshots 
 
-<!-- <p align="center">
+<p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="./public/live-demo.png" alt="Project demo"></a>
-</p> -->
+ <img width=100% height=500px style="min-height:"200px"" src="./public/live-demo.png" alt="Project demo"></a>
+</p>
+
+---
 ## ⛓ Features 
 
 - Light/dark mode toggle
