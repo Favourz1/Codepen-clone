@@ -2,7 +2,7 @@
 
 This projects aims at re-creating the popular [Codepen](https://codepen.io/) with all of its functionality
 
-Find it live [here]()
+Find it live [here](https://rebrand.ly/favourz-codepen)
 
 The project allows users to:
 
@@ -11,6 +11,7 @@ The project allows users to:
 - View and log elements or variables to the console terminal, which can be activated by the `Run Console` button in the bottom right of the application
 - Toggle the view of the application and alter where the editor/results will be positioned
 - Toggle dark mode
+- Saves code in localstorage on the occassion of a slow network.
 
 ## 📝 Table of Contents
 
@@ -82,6 +83,7 @@ The devlopment files are stored in the `./src/` folder.
 - Fullscreen mode
 - Console terminal
 - Cross platform
+- Uses local Storage
 
 ## ⛏️ Built With <a name="built-with"></a>
 
