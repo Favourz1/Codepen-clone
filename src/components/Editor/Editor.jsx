@@ -6,7 +6,7 @@ import "codemirror/mode/xml/xml";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
 import "codemirror/addon/display/fullscreen.js";
-import "codemirror/addon/display/fullscreen.css";
+// import "codemirror/addon/display/fullscreen.css";
 import editorStyles from "./Editor.module.css";
 import { Controlled as ControlledEditor } from "react-codemirror2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
